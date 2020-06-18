@@ -21,27 +21,6 @@ export const logInGoogle = () => {
 // Usuario loggeado
 export const user = () => firebase.auth().currentUser;
 
-export const validation = callback => firebase.auth().onAuthStateChanged((user) => {
-  let _emailVerified = false;
-  if (user) {
-    if (user.emailVerified) {
-      _emailVerified = true;
-    }
-  }
-  return callback(_emailVerified);
-});
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export const validation = callback => firebase.auth().onAuthStateChanged((user) => {
 //   let route = '#/signin';
@@ -59,9 +38,6 @@ export const validation = callback => firebase.auth().onAuthStateChanged((user) 
 //   }
 //   return callback(route);
 // });
-
-
-
 
 // // actualizar nombre de usuario
 // export const updateUserName = (userData, userName) => {

@@ -1,23 +1,81 @@
+import {signingIn , signingInGoogle} from '../view-controller/sigin-controller.js';
 
-export default () => {
-    const viewLogin = document.createElement('div');
-    viewLogin.classList.add('sign-in');
-    viewLogin.innerHTML = `
-      <div class="signin-container">
-        <h1>Travel of world</h1>
-        <p class="message">Bienvenida a Tow,la red de viajeros más usada en el mundo</p>
-        <input class="email-login" id="emailLogIn" type="email" placeholder="e-mail" >
-        <input class="password-login" id="passwordLogIn" type="password" placeholder="contraseña" >
-        <button class="btn-initsession" id="btnInitSession">Inicia sesión</button>
-        <p class="message1">O bien inicia con ...</p>
-        <div class="btn-facebook" id="btnLogInFacebook"><img src="./img/facebook.png"></div>
-        <div class="btn-Google" id="btnLogInGoogle"><img src="./img/google.png"></div>
-        </div>
-        <p class="message2">¿No tienes una cuenta?</p>
-        <button class="btn-signup" id="btnViewSignUp"><a href="#/registro">Regístrate</a></button>
+const login = () => {
+  const viewLogin = `
+ 
+  <h2>Travel of Wordl</h2>
+  <form>
+    <input id="txtLoginEmail" type="text" class="user active" value="Email" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Email&#39;;}">
+    <input id="txtloginPassword" type="password" class="lock active" value="Password" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Password&#39;;}">
+  </form>
+  <div class="forgot">
+     <div class="login-check">
+        <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Remember Me</label>
+
       </div>
-      
-      `;
-    return viewLogin;
-  };
-  
+
+      <div class="clear"> </div>
+  </div>
+  <div class="login-bwn">
+    <input type="submit" value="Log in" id="btnLogin">
+  </div>
+  <div class="login-bottom">
+    <p>O ingresa con</p>
+    <div class="social-icons">
+      <div class="button">
+        <a class="fa" href="#" id="btnLogInFacebook"> 
+            <i class="anc-fa"> </i> 
+            <span>Facebook</span>
+            <div class="clear"> </div>
+        </a>
+        <a class="go" href="#" id="btnLogInGoogle">
+            <i class="anc-go"> </i>
+            <span>Google+</span>
+            <div class="clear"> </div>
+        </a>
+        <div class="clear"> </div>
+      </div>
+      <h4> <a href="#">No tienes una cuenta?</a></h4>
+      <div class="reg-bwn">
+        <a href="#/register" id="btnViewSignUp">Regístrate</a>
+      </div>
+    </div>
+  </div>
+
+`;
+
+  // Creando un elemento nodo de tipo div
+  const divLogin = document.createElement('div');
+  // Añadimos una cadena de texto
+  divLogin.innerHTML = viewLogin;
+  divLogin.classList.add('login');
+
+  const btnLogin = divLogin.querySelector('#btnLogin');
+  const btnLogInFacebook = divLogin.querySelector('#btnLogInFacebook');
+  const btnLogInGoogle = divLogin.querySelector('#btnLogInGoogle');
+
+
+  btnLogin.addEventListener('click', () => {
+    const txtEmail =  divLogin.querySelector('#txtLoginEmail').value;
+    const txtPassword =  divLogin.querySelector('#txtloginPassword').value;
+
+    // console.log('txtEmail',txtEmail);
+    // console.log('txtPassword',txtPassword);
+
+    signingIn(txtEmail,txtPassword);
+    
+
+  });
+
+  btnLogInFacebook.addEventListener('click', () => {
+    console.log('btnLogInFacebook');
+  });
+
+  btnLogInGoogle.addEventListener('click', () => {
+    signingInGoogle();
+  });
+
+  return divLogin;
+};
+
+export default login;

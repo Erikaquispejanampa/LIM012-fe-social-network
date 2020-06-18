@@ -1,14 +1,10 @@
-//import { example } from './example.js';
+import { changeView } from './view-controller/route.js';
 
-//example();
-
-// eslint-disable-next-line import/no-unresolved
-import { changeView } from './view-controller/router-controller.js';
-console.log('entro');
-// example();
-const initPathBase = () => {
-  console.log('entro');
+const init = () => {
+  // Para que se haga un cambio cuando se recarga la página
   changeView(window.location.hash);
+  // Para que se haga un cambio cuando se elige una seccion
   window.addEventListener('hashchange', () => changeView(window.location.hash));
 };
-window.addEventListener('load', initPathBase);
+
+window.addEventListener('load', init);

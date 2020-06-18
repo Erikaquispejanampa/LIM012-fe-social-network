@@ -1,7 +1,7 @@
 const login = () => {
   const viewLogin = `
  
-  <h2>Travel of Wordl</h2>
+  <h2>Travel of World</h2>
   <form>
     <input id="txtLoginEmail" type="text" class="user active" value="Email" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Email&#39;;}">
     <input id="txtloginPassword" type="password" class="lock active" value="Password" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Password&#39;;}">
@@ -47,7 +47,7 @@ const login = () => {
   // Añadimos una cadena de texto
   divLogin.innerHTML = viewLogin;
   divLogin.classList.add('login');
-  
+
   return divLogin;
 };
 

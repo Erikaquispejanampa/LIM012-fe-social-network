@@ -1,57 +1,13 @@
 
-/* start editing from here */
-a{text-decoration:none;}
-.txt-rt{text-align:right;}/* text align right */
-.txt-lt{text-align:left;}/* text align left */
-.txt-center{text-align:center;}/* text align center */
-.float-rt{float:right;}/* float right */
-.float-lt{float:left;}/* float left */
-.clear{clear:both;}/* clear float */
-.pos-relative{position:relative;}/* Position Relative */
-.pos-absolute{position:absolute;}/* Position Absolute */
-.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
-.vertical-top{	vertical-align:top;}/* vertical align top */
-.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
-nav.vertical ul li{	display:block;}/* vertical menu */
-nav.horizontal ul li{	display: inline-block;}/* horizontala menu */
-img{max-width:100%;}
-/*end reset*/
-/*--sign up page start here--*/
-body{
-  
-	font-family: 'Open Sans', sans-serif;
-    min-height: 900px;
-    background-color: #d7d7d7;
-    color: #565656;
-    font-weight: 500
-}
 
-.footer {
-  padding: 4em 0;
-  text-align: center;
-}
 
-h1 {
-  font-size: 2.3em;
-  font-weight: 600;
-  color: #fff;
-  text-align: center;
-  margin: 1em 0em 0em 0em;
-}
-.login {
-  width: 31%;
-  margin: 35px auto 0;
-  padding: 15px 0px 0px 0px;
-  border-radius: 5px;
-  background:#fff;
-}
 .login h2 {
   font-size: 30px;
   font-weight: 700;
   color: #000;
-  text-align:center;
+  text-align:left;
 }
-.login form input[type="text"] {
+.input{
   outline: none;
   font-size: 15px;
   font-weight: 400;
@@ -63,24 +19,7 @@ h1 {
   width: 60%;
   -webkit-appearance: none;
 }
-form {
-  padding: 22px 0px 0px 0px;
-}
-.login input[type="password"] {
-  outline: none;
-  font-size: 19px;
-  font-weight: 400;
-  padding: 10px 20px 10px 45px;
-  border: 1px solid #2DC2BC;
-  border-radius: 5px;
-  margin: 0 auto 11px;
-  width: 60%;
-  -webkit-appearance: none;
-  color:#c0c0c0;
-}
-.login-bwn {
-  text-align: center;
-}
+
 .login input[type="submit"] {
   background: #2DC2BC;
   color: #FFF;
@@ -101,16 +40,26 @@ form {
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
 }
-.login form input.user {
+#txtNameSignUp{
   background: url(./images/user.png)no-repeat 15px 7px #fff;
   display: block;
 }
-.login form input.lock {
+
+
+#txtLoginEmail, #txtEmailSignUp{
+  background: url(./images/user.png)no-repeat 15px 7px #fff;
+  display: block;
+}
+
+#txtloginPassword, #txtPasswordSignUp{
   background: url(./images/key.png)no-repeat 15px 7px #fff;
   display: block;
 }
+
+
 label.checkbox {
-  float: left;
+  align-items: center;
+  
 }
 .forgot input[type="checkbox"] {
   display: none;
@@ -227,6 +176,7 @@ label.checkbox {
   font-weight: 400;
   color: #000;
   margin: 4px 0px 10px 0px;
+  text-align: center;
 }
 .face-bwn {
   width: 20%;
@@ -264,18 +214,19 @@ label.checkbox {
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
 }
-.login-bottom h4 {
+.h4 {
   font-size: 16px;
   font-weight: 400;
   color: #000;
   margin: 20px 0px 0px 0px;
 }
-.login-bottom h4 a{
+.login-bottom 
+.h4 a{
   font-size: 16px;
   font-weight: 400;
   color:rgb(219, 0, 0);
 }
-.login-bottom h4 a:hover{
+.h4 a:hover .btn:hover{
 	color: #2DC2BC;
 	transition: 0.5s all;
   -webkit-transition: 0.5s all;
@@ -284,7 +235,10 @@ label.checkbox {
 }
 .reg-bwn {
   margin: 25px 0px 0px 0px;
+  justify-content: center;
 }
+
+
 .reg-bwn a {
   font-size: 16px;
   font-weight: 500;
@@ -315,118 +269,244 @@ label.checkbox {
  float: left;
  
 }
-/* .button a.fa {
+.button a.fa {
    background:#3B5998; 
  float: left;
  border: 3px solid;
   
 } 
-*/
+
 .button a span {
   margin-top: 8px;
   display: block;
 }
 .button a.go {
-  /* background:#D34836; */
+ 
  margin:0;
  float: left;
 }
 .button a.tw:hover{
   background:#1CA4D6;
 }
-/* .button a.fa:hover{
+ .button a.fa:hover{
   border-color: #46629E
-} */
-/* .button a.go:hover{
+} 
+
+.button a.go:hover{
   border-color: #46629E
-} */
-/* i.anc-tw {
-  background: url(../img/twitter.png)no-repeat 10px 9px #1CA4D6;
-  width: 26px;
-  height: 19px;
-  display: inline-block;
-  padding: 10px 6px;
- float: left;
-  border-radius: 4px 0px 0px 4px;
-} */
-i.anc-fa {
-/* float: left;
-  background: url(../img/facebook.png)no-repeat 6px 9px #37528C;
-  width: 26px;
-  height: 19px;
-  display: inline-block;
-  padding: 10px 6px;
-  border-radius: 4px 0px 0px 4px; */
-  background: url(./images/facebook.png);
-  width: 26px;
-  height: 19px;
-  display: inline-block;
-  padding: 13px 13px;
-  z-index:999 ;
-  margin: 0 -10px;
+} 
+
+
+
+
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
 }
-i.anc-go {
-  /* background: url(../img/google.png)no-repeat 9px 9px #C74534;
-  width: 26px;
-  height: 19px;
-  display: inline-block;
-  padding: 10px 6px;
- float: left;
-  border-radius: 4px 0px 0px 4px; */
-  background: url(./images/google.png);
-  width: 20px;
-  height: 19px;
-  display: inline-block;
-  padding: 13px 13px;
-}
-.button {
-  padding: 20px 0px 42px 0px;
-  border-bottom: 1px solid #ccc;
-}
-h3 {
-  font-size: 2em;
-  font-weight: 600;
-  color: #fff;
-  text-align: center;
-  margin-top: 1em;
-}
-.clear{
-	clear:both;
-}
-.copyright {
-  margin: 3em 0em 2em 0em;
-  text-align: center;
-}
-.copyright p {
-  font-size: 1em;
-  font-weight: 400;
-  color: #fff;
-}
-.copyright p a{
-  font-size: 1em;
-  font-weight: 400;
-  color:#fff ;
-}
-.copyright p a:hover{
-	color: #D34836;
-	 transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -o-transition: 0.5s all;
+
+body{
+   
+  overflow: hidden;
 }
 
 
+#container{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap :7rem;
+  padding: 0 2rem;
+  background-color: #32be8f;
   
+}
+
+h2{
+font-family: 'Pangolin', cursive;
+}
+
+.input{
+color: #999999;
+}
+.img{
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+
+.login-content{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+text-align: center;
+}
+
+
+
+form{
+width: 360px;
+}
+
+
+@media screen and (max-width: 1050px){
+.container{
+  grid-gap: 5rem;
+}
+}
+
+@media screen and (max-width: 1000px){
+form{
+  width: 290px;
+}
+
+.login-content h2{
+      font-size: 2.4rem;
+  margin: 8px 0;
+  
+}
+
+.img img{
+  width: 400px;
+}
+}
+
+@media screen and (max-width: 900px){
+.container{
+  grid-template-columns: 1fr;
+}
+
+.img{
+  display: none;
+}
+
+
+.login-content{
+  justify-content: center;
+}
+}
+
+
+
+
+
+body{
+   width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.login{
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 60px 45px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 20px;
+}
+
+.login .title{
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #3aaf9f;
+}
+
+.login .social_media ,.container .social_media{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login .social_media .item ,.container .social_media .item{
+  margin: 0 5px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 2px solid #eeeeee;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #333333;
+  transition: all 0.5s ease;
+}
+
+.login .social_media .item:hover ,.container .social_media .item:hover{
+  border: 2px solid #3aaf9f;
+  color: #3aaf9f;
+}
+.login .form .input_field ,.container .form .input_field{
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.login .form .input_field .input,.container .form .input_field .input{
+  width: 100%;
+  padding: 12px;
+  padding-left: 30px;
+  border: none;
+  background: #eeeeee;
+}
+
+.login .form .btn,.container .form .btn{
+  width: 70%;
+  margin: 20px auto 0;
+  background: #3aaf9f;
+  text-align: center;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.login .form .btn a{
+  color: #fff;
+}
+
+.login .form .input_field i{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #1d2120;
+}
+
+
+#btnLogin , #btnRegister{
+  background:#00debb;
+	color:#fff;
+	display:inline-block;
+	font-size:1.25em;
+	margin:20px;
+	padding:10px 0;
+	text-align:center;
+	width:200px;
+	text-decoration:none;
+	box-shadow:0px 3px 0px #373c3c;
+}
+
+#btnLogin:hover{
+	box-shadow:0px 0px 0px;
+	padding-top:7px;
+}
+
+
+
+/*--estilos para vista home---*/
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
-body {
-	background: #E9ECF4;
-	color: #000;
-	font-family: 'Roboto', sans-serif;
-}
+
 
 .contenedor {
 	width: 90%;
@@ -506,3 +586,121 @@ body {
 						
 	}
 }
+ 
+ 
+ 
+/*barra de navegacion*/
+ 
+header {
+	width: 100%;
+}
+ 
+header nav {
+	background:#023859;
+	z-index:1000;
+	max-width: 1000px;
+	width:95%;
+    display: flex;
+}
+ 
+header nav ul {
+	list-style:none;
+}
+ 
+header nav ul li {
+	display:inline-block;
+	position: relative;
+}
+ 
+header nav ul li:hover {
+	background:#E6344A;
+}
+ 
+header nav ul li a {
+	color:#fff;
+	display:block;
+	text-decoration:none;
+	padding: 20px;
+}
+ 
+header nav ul li a span {
+	margin-right:10px;
+}
+ 
+
+ 
+@media screen and (max-width: 800px) {
+	body {
+		padding-top:80px;
+	}
+}
+
+#updatePost{
+	background-color: white;
+}
+
+.btnFile .upload{
+	visibility: hidden;
+}
+
+.img .upImage{
+	justify-content: flex-start;
+}
+
+.label .btnfile{
+	align-content: flex-start;
+
+}
+
+.wall {
+	background-color: wheat;
+}
+
+.profile-picture{
+	box-sizing: border-box;
+	display: flex;
+}
+
+.content-publications{
+	background-color: wheat;
+}
+.btn-post{
+  font-family: 'Helvetica', 'Arial', sans-serif;
+ 	  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  position: relative;
+}
+
+.templateComments{
+	background-color: wheat;
+}
+.templateComments .user-wall{
+	background-color: thistle;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+}
+
+.textComment{
+	height: 50px;
+	
+}
+
+
+
+
+
+
+
+
+
+

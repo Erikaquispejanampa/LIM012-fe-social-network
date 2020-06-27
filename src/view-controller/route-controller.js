@@ -14,6 +14,8 @@ const changeView = (route) => {
     { return container.appendChild(components.register()); }
     case '#/home':
     { return container.appendChild(components.home()); }
+    case '#/profile':
+    { return container.appendChild(components.profile()); }
     case '#/notFound':
     { return container.appendChild(components.notFound()); }
     default:

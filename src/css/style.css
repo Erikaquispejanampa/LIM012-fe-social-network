@@ -727,7 +727,7 @@ header nav ul li a span {
   }
   .card-image {
 	grid-area: image;
-	background: url("./img/viaje.jpg");
+	background: url("./images/viaje.jpg");
 	
 	background-size: cover;
 	box-sizing: border-box;

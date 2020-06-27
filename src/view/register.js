@@ -1,18 +1,20 @@
-import { registerUser }  from '../view-controller/sigin-controller.js';
+import { registerUser } from '../view-controller/sigin-controller.js';
 
 
 const register = () => {
   const viewRegister = `
-  <h2>Travel of Wordl</h2>
-  <form id="formRegister">
-    <input id="txtNameSignUp" type="text" class="user active" value="Nombre y Apellido" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Nombre y Apellido&#39;;}">
-    <input id="txtEmailSignUp" type="text" class="user active" value="Email" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Email&#39;;}">
-    <input id="txtPasswordSignUp" type="password" class="lock active" value="Contraseña" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Contraseña&#39;;}">
+  <div class="login-content">
+  <form>
+  <h2 class="title">Travel of World</h2>
+    <input id="txtNameSignUp" type="text" class="input" value="Nombre" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Nombre y Apellido&#39;;}">
+    <input id="txtEmailSignUp" type="text" class="input" value="Email" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Email&#39;;}">
+    <input id="txtPasswordSignUp" type="password" class="input" value="Contraseña" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Contraseña&#39;;}">
+    
     <input type="checkbox" value="Terminos" /> 
     <label>Acepto términos, condiciones y política de privacidad</label>
 
-  </form>
-  <div class="login-bwn">
+ 
+  <div class="reg-bwn">
     <input type="submit" value="Regístrate" id="btnRegister">
   </div>
   <div class="login-bottom">
@@ -23,6 +25,7 @@ const register = () => {
         <a href="#/login" id="btnViewSignUp">Inicia sesión</a>
       </div>
     </div>
+    </form>
   </div>
 `;
   // Creando un elemento nodo de tipo div
@@ -62,16 +65,15 @@ const register = () => {
   const btnRegister = divRegister.querySelector('#btnRegister');
 
   btnRegister.addEventListener('click', () => {
-    const txtName =  divRegister.querySelector('#txtNameSignUp').value;
-    const txtEmail =  divRegister.querySelector('#txtEmailSignUp').value;
-    const txtPassword =  divRegister.querySelector('#txtPasswordSignUp').value;
-    
-    console.log('txtName',txtName);
-    console.log('txtEmail',txtName);
-    console.log('txtPassword',txtName);
-    
-    registerUser(txtName, txtEmail, txtPassword);
+    const txtName = divRegister.querySelector('#txtNameSignUp').value;
+    const txtEmail = divRegister.querySelector('#txtEmailSignUp').value;
+    const txtPassword = divRegister.querySelector('#txtPasswordSignUp').value;
 
+    console.log('txtName', txtName);
+    console.log('txtEmail', txtName);
+    console.log('txtPassword', txtName);
+
+    registerUser(txtName, txtEmail, txtPassword);
   });
 
   return divRegister;

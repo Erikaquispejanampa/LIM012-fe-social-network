@@ -695,7 +695,89 @@ header nav ul li a span {
 	
 }
 
+/*---estilos para  vista profile---*/
+  
+  
+.wrapper-profile{
+	max-width: 500px;
+	width: 100%;
+	height: 80%;
+	background: #fff;
+	padding: 60px 45px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 20px;
+	
+  }
+  
+ .section .box-picture{
+	 text-align: center;
+	 
+ }
+  .card-image {
+	grid-area: image;
+  }
+  .card-text {
+	grid-area: text;
+  }
+  .card-stats {
+	grid-area: stats; 
+  }
+  .card-image {
+	grid-area: image;
+	background: url("./img/viaje.jpg");
+	
+	background-size: cover;
+	box-sizing: border-box;
+	
+  }  
+  .card-text {
+	grid-area: text;
+	margin: 25px;
+  }
+  .card-text .date {
+	color: rgb(255, 7, 110);
+	font-size:13px;
+  }
+  .card-text p {
+	color:white;
+	font-size:15px;
+	font-weight: 300;
+  }
+  .card-text h2 {
+	margin-top:0px;
+	font-size:28px;
+	color: white;
+  }  
+  .card-stats {
+	grid-area: stats; 
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	background: rgb(255, 7, 110);
+  }  
+  .card-stats .stat {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: white;
+	padding:10px;
+  }
 
+  .card:hover {
+	transform: scale ( 1.15 ) ;
+	box-shadow: 5px 5px 15px rgba ( 0 , 0 , 0 , 0.6 ) ;
+  }
+  .card {
+	transition: 0 .5s facilidad;
+	cursor: pointer;
+	margin: 30px;
+  }
 
 
 

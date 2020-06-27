@@ -1,12 +1,15 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prefer-promise-reject-errors */
 
 // Variables globales
-export const table_users = 'users';
-export const storage_perfil = 'perfil';
+export const tableUsers = 'users';
+export const storagePerfil = 'perfil';
 
 
 // metodos
 
-export const nameImage = () => uuid.v4();
+export const nameImage = () => doc.data.uid;
 
 
 export const getBlobByUrl2 = (url) => {

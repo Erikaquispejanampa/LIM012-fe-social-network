@@ -1,11 +1,14 @@
+
+/* eslint-disable no-use-before-define */
 import {
-  signIn, logInGoogle, signUp, verificationEmail, validation,
+  signIn, logInGoogle, signUp, verificationEmail,
 } from '../firebase-controller/auth-controller.js';
 import { createData, getData } from '../firebase-controller/firestore-controller.js';
 import { storageRef, put, getDownloadURL } from '../firebase-controller/storage-controller.js';
 import {
-  table_users, storage_perfil, nameImage, getBlobByUrl,
+  tableUsers, storagePerfil, nameImage, getBlobByUrl,
 } from './util.js';
+import { validation } from '../firebase-controller/validation-controller.js';
 
 
 // Ingreso con usuario y contraseña
@@ -26,11 +29,11 @@ export const signingInGoogle = () => {
     console.log('logeo exitoso con google', result);
 
     // Verificar si el usuario esta registrado en la base de datos
-    getData(table_users, result.user.uid).then((user) => {
+    getData(tableUsers, result.user.uid).then((user) => {
       console.log('user.exists', user);
       if (!user.exists) {
         if (result.user.photoURL) {
-          const imgstorageRef = `${storage_perfil}/${nameImage()}.jpg`;
+          const imgstorageRef = `${storagePerfil} || ${nameImage()}.jpg`;
 
           getBlobByUrl(result.user.photoURL)
             .then((blob) => {
@@ -50,7 +53,7 @@ export const signingInGoogle = () => {
                 };
 
                 // crear usuario en base de datos
-                createData(table_users, result.user.uid, jsonUser);
+                createData(tableUsers, result.user.uid, jsonUser);
               });
             })
             .catch((err) => {
@@ -65,7 +68,7 @@ export const signingInGoogle = () => {
             image: 'foto',
           };
             // crear usuario en base de datos
-          createData(table_users, result.user.uid, jsonUser);
+          createData(tableUsers, result.user.uid, jsonUser);
         }
       } else {
         // imagen de usuario gmail
@@ -103,7 +106,7 @@ export const registerUser = (name, email, password) => {
     };
 
     // Insertar registro en la tabla users
-    createData(table_users, result.user.uid, jsonUser);
+    createData(tableUsers, result.user.uid, jsonUser);
 
     // Enviar correo de verificación
     verificationEmail().then(() => {

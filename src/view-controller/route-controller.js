@@ -21,24 +21,23 @@ const changeView = (route) => {
     }
     case '#/home':
     {
-
       window.location.hash = '/home';
 
       return getAllPosts((posts) => {
         //  console.log(posts);
         const listPosts = [];
-        
         posts.forEach((post) => {
           if (post.statusPrivacy === 'public') {
             listPosts.push(post);
           }
         });
 
-        container.innerHTML = '';  
-        return container.appendChild(components.home(listPosts));
+        container.innerHTML = '';
+        { return container.appendChild(components.home(listPosts)); }
       });
-
     }
+    case '#/profile':
+    { return container.appendChild(components.profile()); }
     default:
     {
       window.location.hash = '/login';

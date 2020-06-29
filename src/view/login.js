@@ -2,48 +2,43 @@ import { signingIn, signingInGoogle } from '../view-controller/sigin-controller.
 
 const login = () => {
   const viewLogin = `
- 
-  <h2>Travel of Wordl</h2>
+<div class="login-content">
   <form>
-    <input id="txtLoginEmail" type="text" class="user active" value="Email" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Email&#39;;}">
-    <input id="txtloginPassword" type="password" class="lock active" value="Password" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Password&#39;;}">
-  </form>
-  <div class="forgot">
+     <h2 class="title">Travel of World</h2>
+      <input id="txtLoginEmail" type="text" class="input" value="Email" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Email&#39;;}">
+      <input id="txtloginPassword" type="password" class="input" value="Password" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Password&#39;;}">
+  
+    <div class="forgot">
      <div class="login-check">
         <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Remember Me</label>
-
       </div>
-
       <div class="clear"> </div>
   </div>
-  
-  <div class="login-bwn">
+  <div class="reg-bwn">
     <input type="submit" value="Log in" id="btnLogin">
-    <div id="divErrorLogin" class="hide"><h4>Ha ocurrido un error, por favor reintentalo. </h4></div>
   </div>
   <div class="login-bottom">
     <p>O ingresa con</p>
     <div class="social-icons">
-      <div class="button">
-        <a class="fa" href="#" id="btnLogInFacebook"> 
-            <i class="anc-fa"> </i> 
-            <span>Facebook</span>
-            <div class="clear"> </div>
-        </a>
-        <a class="go" href="#" id="btnLogInGoogle">
-            <i class="anc-go"> </i>
-            <span>Google+</span>
-            <div class="clear"> </div>
-        </a>
+    <div class="social_media">
+            <div class="item" >
+              <i class="fab fa-facebook-f" href="#" id="btnLogInFacebook"></i>
+            </div>
+           
+            <div class="item">
+              <i class="fab fa-google-plus-g" href="#" id="btnLogInGoogle"></i>
+            </div>
+            </div>
+            </div> 
         <div class="clear"> </div>
       </div>
       <h4> <a href="#">No tienes una cuenta?</a></h4>
       <div class="reg-bwn">
-        <a href="#/register" id="btnViewSignUp">Regístrate</a>
+        <a class ="text-registro" href="#/register" id="btnViewSignUp">Regístrate</a>
       </div>
+    </form>
     </div>
-  </div>
-
+</div>
 `;
 
   // Creando un elemento nodo de tipo div
@@ -60,6 +55,9 @@ const login = () => {
   btnLogin.addEventListener('click', () => {
     const txtEmail = divLogin.querySelector('#txtLoginEmail').value;
     const txtPassword = divLogin.querySelector('#txtloginPassword').value;
+
+    // console.log('txtEmail',txtEmail);
+    // console.log('txtPassword',txtPassword);
 
     signingIn(txtEmail, txtPassword);
   });

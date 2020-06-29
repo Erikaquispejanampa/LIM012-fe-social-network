@@ -1,32 +1,30 @@
-import {  signIn, logInGoogle, validation,} from '../firebase-controller/auth-controller.js';
+/* eslint-disable max-len */
+import { signIn, logInGoogle, validation } from '../firebase-controller/auth-controller.js';
 import { createProfileInfo, getUser } from '../firebase-controller/firestore-controller.js';
 import { storageRef, put } from '../firebase-controller/storage-controller.js';
-import { nameImage, getBlobByUrl,storage_perfil } from '../util/util.js';
+import { nameImage, getBlobByUrl, storagePerfil } from '../util/util.js';
 
-import { changeView } from '../view-controller/route-controller.js';
-import { getUserInfo } from '../view-controller/login-controller.js';
+import { changeView } from './route-controller.js';
+import { getUserInfo } from './login-controller.js';
 
 
 // Ingreso con usuario y contraseña
-export const signingIn = (email, password) => 
-
-  signIn(email, password).then(() => {
-    console.log('logeo exitoso');
-    // Verificar usuario correo
-    validation( (result) => {
-      if (result) {
-        console.log('usuario verificado');
-        // redireccionar a la pagina home
-        getUserInfo().then(() => {
-          changeView('#/home');
-        });
-      } 
-      else {
-        console.log('usuario no verificado');
-        // Mostrar mensaje de usuario no verificado
-        alert('Correo no verificado');
-      }
-    });
+export const signingIn = (email, password) => signIn(email, password).then(() => {
+  console.log('logeo exitoso');
+  // Verificar usuario correo
+  validation((result) => {
+    if (result) {
+      console.log('usuario verificado');
+      // redireccionar a la pagina home
+      getUserInfo().then(() => {
+        changeView('#/home');
+      });
+    } else {
+      console.log('usuario no verificado');
+      // Mostrar mensaje de usuario no verificado
+      alert('Correo no verificado');
+    }
+  });
 });
 
 // Ingreso utilizando google
@@ -38,9 +36,9 @@ export const signingInGoogle = () => {
     getUser(result.user.uid).then((user) => {
       //  console.log('user.exists', user);
       if (!user.exists) {
-        //Si existe foto en cuenta de gmail, descargamos su foto para subirlo al firebase y creamos el usuario en la base de datos
+        // Si existe foto en cuenta de gmail, descargamos su foto para subirlo al firebase y creamos el usuario en la base de datos
         if (result.user.photoURL) {
-          const imgstorageRef = `${storage_perfil}/${nameImage()}.jpg`;
+          const imgstorageRef = `${storagePerfil}/${nameImage()}.jpg`;
 
           getBlobByUrl(result.user.photoURL)
             .then((blob) => {
@@ -50,7 +48,7 @@ export const signingInGoogle = () => {
               put(refStorage, blob).then((snapshot) => {
                 // console.log('subio imagen',snapshot);
                 // console.log('subio imagen',snapshot.metadata.fullPath);
-                console.log('snapshot',snapshot);
+                console.log('snapshot', snapshot);
                 // Armar estructura de usuario para la insercion en la tabla users
                 const jsonUser = {
                   fullName: result.user.displayName,
@@ -66,13 +64,12 @@ export const signingInGoogle = () => {
                 getUserInfo().then(() => {
                   changeView('#/home');
                 });
-
               });
             })
             .catch((err) => {
               console.error('error al cargar imagen google', err.statusText);
             });
-        } 
+        }
         // Si no hay foto, creamos el usuario en base de datos
         else {
           // Armar estructura de usuario para la insercion en la tabla users
@@ -90,8 +87,7 @@ export const signingInGoogle = () => {
             changeView('#/home');
           });
         }
-      }
-      else {
+      } else {
         // // imagen de usuario gmail
         // const imgstorageRef = user.data().image;
         // const refStorage = storageRef(imgstorageRef);
@@ -115,7 +111,6 @@ export const signingInGoogle = () => {
 };
 
 
-
 const verifiedEmailResult = (result) => {
   if (result) {
     console.log('usuario verificado');
@@ -123,11 +118,8 @@ const verifiedEmailResult = (result) => {
     getUserInfo().then(() => {
       changeView('#/home');
     });
-
   } else {
     console.log('usuario no verificado');
     // Mostrar mensaje de usuario no verificado
   }
 };
-
-

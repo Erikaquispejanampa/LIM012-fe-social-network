@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // import { changeView } from '../view-controller/route-controller.js';
 // import { user } from '../firebase-controller/auth-controller.js';
 

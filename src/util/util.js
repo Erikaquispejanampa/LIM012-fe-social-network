@@ -2,8 +2,8 @@
 // Variables globales
 export const table_users = 'users';
 export const table_posts = 'posts';
-export const storage_perfil = 'perfil';
-export const storage_post = 'post';
+export const storagePerfil = 'perfil';
+export const storagePost = 'post';
 
 
 // metodos
@@ -35,13 +35,12 @@ export const getBlobByUrl = url => new Promise(((resolve, reject) => {
 
 
 export const dataURLtoFile = (dataurl, filename) => {
-  
-  let arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
-  bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
-  while(n--){
-      u8arr[n] = bstr.charCodeAt(n);
+  const arr = dataurl.split(','); const mime = arr[0].match(/:(.*?);/)[1];
+  const bstr = atob(arr[1]); let n = bstr.length; const
+    u8arr = new Uint8Array(n);
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n);
   }
 
-  return new File([u8arr], filename, {type:mime});
-
-}
+  return new File([u8arr], filename, { type: mime });
+};

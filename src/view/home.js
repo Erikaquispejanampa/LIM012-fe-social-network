@@ -77,6 +77,7 @@ export default (posts) => {
     </div>
       
   <select id="ddlStatusPrivacy">
+
         <option id="public" value="public">Público</option>
         <option id="private "value="private">Privado</option>
       </select>

@@ -1,3 +1,5 @@
+import { signingIn, signingInGoogle } from '../view-controller/sigin-controller.js';
+
 const login = () => {
   const viewLogin = `
  
@@ -14,8 +16,10 @@ const login = () => {
 
       <div class="clear"> </div>
   </div>
+  
   <div class="login-bwn">
     <input type="submit" value="Log in" id="btnLogin">
+    <div id="divErrorLogin" class="hide"><h4>Ha ocurrido un error, por favor reintentalo. </h4></div>
   </div>
   <div class="login-bottom">
     <p>O ingresa con</p>
@@ -47,7 +51,27 @@ const login = () => {
   // Añadimos una cadena de texto
   divLogin.innerHTML = viewLogin;
   divLogin.classList.add('login');
-  
+
+  const btnLogin = divLogin.querySelector('#btnLogin');
+  const btnLogInFacebook = divLogin.querySelector('#btnLogInFacebook');
+  const btnLogInGoogle = divLogin.querySelector('#btnLogInGoogle');
+
+
+  btnLogin.addEventListener('click', () => {
+    const txtEmail = divLogin.querySelector('#txtLoginEmail').value;
+    const txtPassword = divLogin.querySelector('#txtloginPassword').value;
+
+    signingIn(txtEmail, txtPassword);
+  });
+
+  btnLogInFacebook.addEventListener('click', () => {
+    console.log('btnLogInFacebook');
+  });
+
+  btnLogInGoogle.addEventListener('click', () => {
+    signingInGoogle();
+  });
+
   return divLogin;
 };
 
